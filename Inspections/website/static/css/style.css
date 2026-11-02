@@ -1,5 +1,6 @@
 {% load static %}
 /* page select sidebar */
+/* original navigation - kept in for future reference*/
     .sidenav {
         height: auto;
         width: 310px;

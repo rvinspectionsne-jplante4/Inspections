@@ -87,10 +87,12 @@ h3 {
     font-size: var(--PAGE_FONT_SIZE);
     color: #3a2087b5;
 }
+.class-a-table-head {
+    font-size: clamp(0.5em, 1.5rem, 3rem)
+}
 .class-a-table-text {
-    font-size: var(--PAGE_FONT_SIZE);
-    color: #20873db5;
-    text-wrap: balance;
+    text-align: center;
+    font-size: clamp(0.5em, 1.2rem, 3rem);
 }
 .class-a-bottom-text {
     font-size: 2rem;
@@ -161,16 +163,9 @@ h3 {
     font-size: var(--PAGE_FONT_SIZE);
     color: #6f0d5a;
 }
-.contact-textarea {
-    border-radius: 15px;
-}
 .contact-button {
     border-radius: 10px;
-    border-color: black;
-    border: 3em;
-}
-.contact-radio {
-    gap: 4em;
+    border: 3em black;
 }
 /* success page text styles */
 .success-font {
