@@ -1,10 +1,12 @@
+import email
 from django.shortcuts import render
+from datetime import datetime, date
+from website.models import ContactsModel
 
 # Create your views here.
 from django.shortcuts import render
 from django.core.mail import send_mail
 from .forms import ContactForm
-
 
 # Create your views here.
 def home(request):
@@ -54,29 +56,40 @@ def contact(request):
     if request.method == "POST":
 
         form = ContactForm(request.POST)
-        print(request.POST)
+        #print(request.POST)
         if form.is_valid():
             # create an email
-            name = form.cleaned_data['name']
+            cname = form.cleaned_data['name']
             address = form.cleaned_data['email']
             phone = form.cleaned_data['phone']
             message = form.cleaned_data['message']
             camper_type = form.cleaned_data['type']
             make = form.cleaned_data['make']
             seller = form.cleaned_data['seller']
-            long = ("Name - "+name+"\n"+
+            long = ("Name - "+cname+"\n"+
                     "Email - "+address+"\n"+
                     "Phone - "+phone+"\n"+
                     "Type - "+camper_type+"\n"+
                     "Make - "+make+"\n"+
                     "Seller - "+seller+"\n"+
                     "Message\n"+message)
-            send_mail('Web Contact from ' + name,
+            send_mail('Web Contact from ' + cname,
                        long,
                        address,
                       ['rvinspectionsne@gmail.com'],
                        fail_silently=False,
                       )
+            #create a record in the ContactsModel db
+            c = ContactsModel.objects.create(contact_name=cname,
+                                             contact_phone=phone,
+                                             contact_email=address,
+                                             contact_type=camper_type,
+                                             contact_make=make,
+                                             contact_message=message,
+                                             contact_seller=seller,
+                                             contact_date=datetime.now())
+            c.save()
+
             return render(request, "success.html",
                 {"gradient1": "#00000069", "gradient2": "#0000001a"})
 

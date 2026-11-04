@@ -63,7 +63,7 @@ class ContactFormMobile(forms.Form):
     make = forms.CharField(label='Make and Model', max_length=70,
                 widget=forms.Textarea(
                     attrs={'class': 'contact-textarea', 'cols': 20, 'rows': 1}))
-    seller= forms.ChoiceField(label='Seller', choices=SELLER_CHOICES,
+    seller = forms.ChoiceField(label='Seller', choices=SELLER_CHOICES,
             widget=forms.RadioSelect(attrs={ 'class': 'form-check form-check-inline contact-radio', }))
     message = forms.CharField(
         widget=forms.Textarea(
