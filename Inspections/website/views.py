@@ -66,13 +66,8 @@ def contact(request):
             camper_type = form.cleaned_data['type']
             make = form.cleaned_data['make']
             seller = form.cleaned_data['seller']
-            long = ("Name - "+cname+"\n"+
-                    "Email - "+address+"\n"+
-                    "Phone - "+phone+"\n"+
-                    "Type - "+camper_type+"\n"+
-                    "Make - "+make+"\n"+
-                    "Seller - "+seller+"\n"+
-                    "Message\n"+message)
+            long = (f"Name - {cname}\nEmail - {address}\nPhone - {phone}\nType - {camper_type}\n"
+                    f"Make - {make}\nSeller - {seller}\nMessage - {message}")
             send_mail('Web Contact from ' + cname,
                        long,
                        address,
