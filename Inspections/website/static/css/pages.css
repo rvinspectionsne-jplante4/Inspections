@@ -243,3 +243,16 @@ section::-webkit-scrollbar-thumb {
 section::-webkit-scrollbar-track {
     background-color: darkgreen;
 }
+.menu_text {
+    font-size: 1.25em;
+    font-style: oblique;
+    font-family: Roboto, serif;
+    background-color: #bfd8d6;
+}
+.menu_text a:hover {
+    font-weight: bold;
+}
+.explore_button {
+    font-size: 2rem;
+    background-color: #1e8acd;
+}
