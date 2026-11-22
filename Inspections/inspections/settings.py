@@ -120,7 +120,7 @@ STATIC_URL = 'static/'
 STATIC_DIRS = [
     os.path.join(BASE_DIR, 'website/static')
 ]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'website/static')
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 EMAIL_HOST = 'smtp.gmail.com'
