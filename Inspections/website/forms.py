@@ -8,7 +8,7 @@ class ContactForm(forms.Form):
         ('class_c', 'Class C',),
         ('travel_trailer', 'Travel Trailer',),
         ('fifth_wheel', 'Fifth Wheel',),
-        ('truck camper', 'Truck Camper',),
+        ('truck_camper', 'Truck Camper',),
     )
     SELLER_CHOICES = (
       ('private', "Private Seller",),
